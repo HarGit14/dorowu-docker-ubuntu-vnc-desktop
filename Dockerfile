@@ -30,6 +30,9 @@ RUN apt-get update \
     && apt-get autoremove \
     && rm -rf /var/lib/apt/lists/*
 
+# Additional software
+RUN apt-get update \
+    && apt-get install -y vlc flvstreamer ffmpeg
 
 # tini for subreap                                   
 ENV TINI_VERSION v0.9.0
