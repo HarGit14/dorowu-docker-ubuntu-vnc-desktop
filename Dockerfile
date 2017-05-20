@@ -26,13 +26,11 @@ RUN apt-get update \
         mesa-utils libgl1-mesa-dri \
         gnome-themes-standard gtk2-engines-pixbuf gtk2-engines-murrine pinta arc-theme \
         dbus-x11 x11-utils \
+		vlc flvstreamer ffmpeg \
     && apt-get autoclean \
     && apt-get autoremove \
     && rm -rf /var/lib/apt/lists/*
 
-# Additional software
-RUN apt-get update \
-    && apt-get install -y vlc flvstreamer ffmpeg
 
 # tini for subreap                                   
 ENV TINI_VERSION v0.9.0
